@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="tasksJson" type="String">
+      <default>[]</default>
+    </entry>
+    <entry name="worldClocksJson" type="String">
+      <default>[]</default>
+    </entry>
+    <entry name="clockStyle" type="String"><default>analog</default></entry>
+    <entry name="organizerEnabled" type="Bool"><default>true</default></entry>
+    <entry name="clockBackgroundEnabled" type="Bool"><default>true</default></entry>
+    <entry name="clockFollowPlasmaColors" type="Bool"><default>true</default></entry>
+    <entry name="clockBackgroundColor" type="String"><default>#202124</default></entry>
+    <entry name="clockBorderColor" type="String"><default>#3f444d</default></entry>
+    <entry name="analogDialColor" type="String"><default>#f5f7fa</default></entry>
+    <entry name="analogHourHandColor" type="String"><default>#3daee9</default></entry>
+    <entry name="analogMinuteHandColor" type="String"><default>#2980b9</default></entry>
+    <entry name="analogSecondHandColor" type="String"><default>#9b59b6</default></entry>
+    <entry name="analogAccentColor" type="String"><default>#3daee9</default></entry>
+    <entry name="analogAccentTextColor" type="String"><default>#ffffff</default></entry>
+    <entry name="digitalTextColor" type="String"><default>#f5f7fa</default></entry>
+    <entry name="digitalTextOutlineEnabled" type="Bool"><default>false</default></entry>
+    <entry name="digitalTextOutlineColor" type="String"><default>#000000</default></entry>
+    <entry name="digitalTextOutlineThickness" type="Int"><default>1</default></entry>
+    <entry name="clockScale" type="Double"><default>1.0</default></entry>
+    <entry name="cookieSides" type="Int"><default>14</default></entry>
+    <entry name="dialStyle" type="String"><default>full</default></entry>
+    <entry name="hourHandStyle" type="String"><default>fill</default></entry>
+    <entry name="minuteHandStyle" type="String"><default>medium</default></entry>
+    <entry name="secondHandStyle" type="String"><default>dot</default></entry>
+    <entry name="dateStyle" type="String"><default>bubble</default></entry>
+    <entry name="timeIndicators" type="Bool"><default>true</default></entry>
+    <entry name="hourMarks" type="Bool"><default>false</default></entry>
+    <entry name="constantlyRotate" type="Bool"><default>false</default></entry>
+    <entry name="rotationSpeed" type="Int"><default>61</default></entry>
+    <entry name="useSineCookie" type="Bool"><default>false</default></entry>
+    <entry name="digitalShowDate" type="Bool"><default>true</default></entry>
+    <entry name="digitalDatePosition" type="Int"><default>0</default></entry>
+    <entry name="digitalShowSeconds" type="Int"><default>1</default></entry>
+    <entry name="digitalUse24h" type="Int"><default>1</default></entry>
+    <entry name="digitalDateFormat" type="String"><default>shortDate</default></entry>
+    <entry name="digitalCustomDateFormat" type="String"><default>ddd d</default></entry>
+    <entry name="digitalShowTimezone" type="Bool"><default>false</default></entry>
+    <entry name="digitalTimezoneFormat" type="Int"><default>0</default></entry>
+    <entry name="digitalTimezone" type="String"><default>Local</default></entry>
+    <entry name="digitalSelectedTimeZones" type="StringList"><default>Local</default></entry>
+    <entry name="digitalWheelChangesTimezone" type="Bool"><default>false</default></entry>
+    <entry name="digitalAutoFont" type="Bool"><default>true</default></entry>
+    <entry name="digitalFontFamily" type="String"><default></default></entry>
+    <entry name="digitalFontSize" type="Int"><default>10</default></entry>
+    <entry name="digitalFontWeight" type="Int"><default>400</default></entry>
+    <entry name="digitalItalic" type="Bool"><default>false</default></entry>
+  </group>
+</kcfg>

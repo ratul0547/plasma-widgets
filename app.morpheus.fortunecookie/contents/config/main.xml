@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="refreshMinutes" type="Int">
+      <default>15</default>
+    </entry>
+    <entry name="reloadButtonEnabled" type="Bool"><default>true</default></entry>
+    <entry name="followPlasmaColors" type="Bool"><default>true</default></entry>
+    <entry name="backgroundEnabled" type="Bool"><default>true</default></entry>
+    <entry name="backgroundColor" type="String"><default>#202124</default></entry>
+    <entry name="borderColor" type="String"><default>#3f444d</default></entry>
+    <entry name="textColor" type="String"><default>#f5f7fa</default></entry>
+    <entry name="textOutlineEnabled" type="Bool"><default>false</default></entry>
+    <entry name="textOutlineColor" type="String"><default>#000000</default></entry>
+    <entry name="quoteIconEnabled" type="Bool"><default>true</default></entry>
+    <entry name="quoteIconColor" type="String"><default>#3daee9</default></entry>
+    <entry name="fontFamily" type="String"><default>Noto Serif</default></entry>
+    <entry name="fontSize" type="Int"><default>12</default></entry>
+    <entry name="adaptiveFontSize" type="Bool"><default>true</default></entry>
+    <entry name="minimumFontSize" type="Int"><default>7</default></entry>
+    <entry name="lineSpacing" type="Int"><default>115</default></entry>
+    <entry name="letterSpacing" type="Double"><default>0.0</default></entry>
+    <entry name="headerEnabled" type="Bool"><default>false</default></entry>
+    <entry name="headerText" type="String"><default>Fortune Cookie</default></entry>
+    <entry name="headerIcon" type="String"><default>format-text-blockquote</default></entry>
+    <entry name="headerColor" type="String"><default>#f5f7fa</default></entry>
+    <entry name="fortuneArguments" type="String"><default>-s</default></entry>
+  </group>
+</kcfg>

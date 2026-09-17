@@ -1,0 +1,15 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Authors": [{ "Name": "morpheus" }],
+    "Category": "Date and Time",
+    "Description": "Analog Cookie Clock or Plasma-style Digital Clock with an optional organizer popup",
+    "EnabledByDefault": true,
+    "Icon": "office-calendar",
+    "Id": "app.morpheus.cookieclock",
+    "License": "GPL-3.0-or-later",
+    "Name": "Cookie Clock",
+    "Version": "3.1.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0"
+}
