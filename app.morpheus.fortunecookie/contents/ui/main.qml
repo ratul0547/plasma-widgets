@@ -9,6 +9,11 @@ import org.kde.plasma.plasmoid
 PlasmoidItem {
     id: root
 
+    // Desktop containments use top-level geometry when creating a new
+    // instance. The representation's implicit size alone is not sufficient.
+    width: Kirigami.Units.gridUnit * 24
+    height: Kirigami.Units.gridUnit * 12
+
     property string quoteText: "Loading a fortune…"
     property string activeCommand: ""
     readonly property string command: buildFortuneCommand(Plasmoid.configuration.fortuneArguments)

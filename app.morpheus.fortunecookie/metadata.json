@@ -9,7 +9,7 @@
     "Id": "app.morpheus.fortunecookie",
     "License": "GPL-3.0-or-later",
     "Name": "Fortune Cookie",
-    "Version": "3.0.1"
+    "Version": "3.0.2"
   },
   "X-Plasma-API-Minimum-Version": "6.0"
 }
