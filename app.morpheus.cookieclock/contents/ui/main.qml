@@ -12,6 +12,15 @@ PlasmoidItem {
 
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
 
+    // Plasma's built-in clocks provide finite top-level geometry. Desktop
+    // containments use these values when creating a new applet instance.
+    width: clockStyle === "analog"
+        ? 236 * clockScale
+        : Kirigami.Units.gridUnit * 10
+    height: clockStyle === "analog"
+        ? 236 * clockScale
+        : Kirigami.Units.gridUnit * 4
+
     property date now: new Date()
     property date shownMonth: new Date(now.getFullYear(), now.getMonth(), 1)
     property int currentTab: 0
@@ -93,12 +102,6 @@ PlasmoidItem {
             ? "\nClick to open Calendar, To-Do, Timer & World Clock" : ""
         return zone + time + action
     }
-    // A desktop containment is large enough to select the full representation
-    // automatically. Keep this applet in clock mode there; the organizer is
-    // shown only when expanded by clicking the clock.
-    switchWidth: 100000
-    switchHeight: 100000
-
     function loadTasks() {
         try {
             const parsed = JSON.parse(Plasmoid.configuration.tasksJson || "[]")
@@ -129,7 +132,10 @@ PlasmoidItem {
         analogAccentColor = Plasmoid.configuration.analogAccentColor
         analogAccentTextColor = Plasmoid.configuration.analogAccentTextColor
         digitalTextColor = Plasmoid.configuration.digitalTextColor
-        clockScale = Number(Plasmoid.configuration.clockScale)
+        const configuredScale = Number(Plasmoid.configuration.clockScale)
+        clockScale = Number.isFinite(configuredScale)
+            ? Math.max(0.5, Math.min(2.0, configuredScale))
+            : 1.0
         cookieSides = Number(Plasmoid.configuration.cookieSides)
         dialStyle = String(Plasmoid.configuration.dialStyle)
         hourHandStyle = String(Plasmoid.configuration.hourHandStyle)
@@ -1144,11 +1150,15 @@ PlasmoidItem {
     }
 
     compactRepresentation: Loader {
+        id: compactClockLoader
+
         sourceComponent: root.clockStyle === "digital" ? digitalRepresentationComponent : analogRepresentationComponent
         Layout.minimumWidth: item ? item.Layout.minimumWidth : 0
         Layout.minimumHeight: item ? item.Layout.minimumHeight : 0
-        Layout.preferredWidth: item ? item.implicitWidth : 0
-        Layout.preferredHeight: item ? item.implicitHeight : 0
+        Layout.preferredWidth: item ? item.Layout.preferredWidth : -1
+        Layout.preferredHeight: item ? item.Layout.preferredHeight : -1
+        Layout.maximumWidth: item ? item.Layout.maximumWidth : Infinity
+        Layout.maximumHeight: item ? item.Layout.maximumHeight : Infinity
         Layout.fillWidth: item ? item.Layout.fillWidth : false
         Layout.fillHeight: item ? item.Layout.fillHeight : false
     }
