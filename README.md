@@ -1,91 +1,170 @@
-# Native Plasma 6 widgets
+# Cookie Clock and Fortune Cookie for Plasma 6
 
-This bundle contains two independent plasmoids:
+This bundle contains two independent Plasma 6 widgets. 
 
-- **Cookie Clock** — the scalloped analog desktop clock. Clicking it opens Calendar,
-  To-Do, Pomodoro Timer, and World Clock tabs. To-do items and saved cities are stored in the plasmoid's own
-  Plasma configuration. Version 2 adds an optional Digital style adapted from
-  Plasma Workspace 6.7.5's Digital Clock, suitable for replacing the stock
-  clock in a panel. Analog and Digital instances keep independent settings.
-  Its clock background can be hidden, follow Plasma colors, or use custom
-  alpha-capable background and border colors in either style. Analog mode can
-  rotate only the cookie shape behind its stationary dial. Its 1–120 speed
-  control maps from 120 seconds per rotation down to 1 second per rotation.
-  Its configuration is separated into General, Appearance, and World Clock
-  pages. General dynamically shows Analog or Digital controls based on the
-  selected clock style.
-  Digital time, date, and time-zone text can use an optional alpha-capable
-  outline configured from Appearance. The complete custom palette includes the
-  analog dial, all three hands, accent and accent text, and digital text.
-  Appearance follows the style selected in General and only shows relevant
-  controls. Digital outlines support configurable 1–8 px thickness.
-- **Fortune Cookie** — a customizable desktop quote card. It refreshes every
-  15 minutes; double-click or press the refresh button to load another quote.
-  Its settings include optional/custom backgrounds, Plasma or custom colors,
-  KDE's native searchable font chooser, text size and spacing, an
-  optional quotation mark, and an optional fixed 9 pt header with custom text
-  and icon. Adaptive font sizing is enabled by default: long fortunes shrink
-  only as far as the configured minimum size and remain clipped inside the card.
-  The reload button can be hidden without disabling double-click refresh, and
-  quote text can use a configurable outline for contrast over wallpapers. All
-  custom color controls support alpha through the picker or `#AARRGGBB` values.
-  Settings are divided into General, Appearance, and Advanced pages. Adaptive
-  sizing uses configurable minimum and maximum sizes; equal values produce a
-  fixed font size. If either control crosses the other, its boundary follows
-  automatically. The Advanced page keeps the executable locked to `fortune` while
-  allowing its flags and arguments to be edited safely.
+## Widgets
 
-No Quickshell process, Hyprland integration, or session-start command is used.
+### Cookie Clock
 
-## Install (Fish)
+Cookie Clock is a material style clock widget that provides two selectable styles:
 
-From this extracted directory:
+- **Analog** — a customizable scalloped clock with configurable dial, hands, colors, accents, date indicators, shape, rotation, and rotation speed.
+- **Digital** — a panel-friendly clock with configurable time, date, time zone, font, colors, and optional text outline.
 
-```fish
+Clicking the clock can open an organizer containing Calendar, To-Do, Timer, and World Clock tabs. The organizer can be disabled, pinned open, or allowed to close automatically when focus moves elsewhere. Tasks, timer settings, and saved cities are stored in the widget's Plasma configuration.
+
+### Fortune Cookie
+
+Fortune Cookie displays periodically refreshed output from the `fortune` or `fortune-mod` program depending on the available package in your distro. Double-click the widget to request a new fortune.
+
+It supports:
+
+- Plasma or custom alpha-capable colors
+- Optional background and border
+- KDE's native font chooser
+- Adaptive minimum and maximum font sizes
+- Line and letter spacing
+- Optional quotation icon and fixed header
+- Configurable text outline and outline thickness
+- Editable `fortune` flags and arguments
+
+## Requirements
+
+- KDE Plasma 6
+- `kpackagetool6`, normally supplied by Plasma Workspace
+- `fortune` or `fortune-mod` for Fortune Cookie only
+
+Cookie Clock does not require `fortune`.
+
+## Cookie Clock
+
+### Install Cookie Clock
+
+```sh
 kpackagetool6 --type Plasma/Applet --install packages/app.morpheus.cookieclock.plasmoid
+```
+
+### Upgrade Cookie Clock
+
+```sh
+kpackagetool6 --type Plasma/Applet --upgrade packages/app.morpheus.cookieclock.plasmoid
+```
+
+### Add and configure Cookie Clock
+
+1. Right-click the desktop or panel and select **Enter Edit Mode**.
+2. Select **Add Widgets**.
+3. Search for **Cookie Clock**.
+4. Drag it onto the desktop or panel.
+5. Right-click the widget and select **Configure Cookie Clock…**.
+
+Digital style is designed to work well in a panel. Analog and Digital styles can both be used on the desktop. The organizer popup can be enabled or disabled from General settings.
+
+### Remove Cookie Clock
+
+Remove active widget instances from the desktop or panel first, then run:
+
+```sh
+kpackagetool6 --type Plasma/Applet --remove app.morpheus.cookieclock
+```
+
+## Fortune Cookie
+
+### Install the `fortune` command
+
+Fortune Cookie requires the `fortune` executable. Install the appropriate package for your distribution:
+
+```sh
+# Fedora and related distributions
+sudo dnf install fortune-mod
+
+# Arch Linux and related distributions
+sudo pacman -S fortune-mod
+
+# Debian, Ubuntu, and related distributions
+sudo apt install fortune-mod
+
+# openSUSE
+sudo zypper install fortune
+```
+
+Package names may vary slightly between distribution releases.
+
+### Install Fortune Cookie
+
+```sh
 kpackagetool6 --type Plasma/Applet --install packages/app.morpheus.fortunecookie.plasmoid
 ```
 
-If an older test version is already installed:
+### Upgrade Fortune Cookie
 
-```fish
-kpackagetool6 --type Plasma/Applet --upgrade packages/app.morpheus.cookieclock.plasmoid
+```sh
 kpackagetool6 --type Plasma/Applet --upgrade packages/app.morpheus.fortunecookie.plasmoid
 ```
 
-Then right-click the Plasma desktop, choose **Enter Edit Mode** →
-**Add Widgets**, and add **Cookie Clock** and **Fortune Cookie**.
+### Add and configure Fortune Cookie
 
-Right-click **Cookie Clock** and choose **Configure Cookie Clock…** to change
-its scale, sides, dial, hands, date indicators, center time, inner hour marks,
-rotation, and sine-cookie shape. Version 1.3.0 applies those changes immediately
-when you press **Apply**, without restarting Plasma.
+1. Right-click the desktop or panel and select **Enter Edit Mode**.
+2. Select **Add Widgets**.
+3. Search for **Fortune Cookie**.
+4. Drag it onto the desktop.
+5. Right-click the widget and select **Configure Fortune Cookie…**.
 
-The organizer closes when you click elsewhere. Use the pin button beside its
-tabs to keep it open; click the pin again to restore normal auto-close behavior.
-The organizer fades in when opened, and its Timer tab accepts custom durations
-from 1 to 240 minutes. The World Clock tab stores cities by display name and
-IANA time-zone ID. Cities are added and removed only from the dedicated
-**World Clock** settings page, which provides a searchable system time-zone
-list. The organizer tab stays display-only and presents the saved cities in a
-two-column card grid. Cards automatically switch between theme-aware daytime
-colors and a dark nighttime appearance based on each city's local hour.
+Use General settings for refresh behavior, Appearance for visual styling, and Advanced for `fortune` flags and arguments.
 
-Digital Clock's manual font setting also uses KDE's native searchable font
-chooser.
+### Remove Fortune Cookie
 
-The **Enable organizer popup** option can disable the click-open organizer for
-either clock style without disabling the clock itself.
+Remove active widget instances from the desktop or panel first, then run:
 
-The quote widget requires `fortune`. On Fedora:
-
-```fish
-sudo dnf install fortune-mod
-```
-
-## Remove
-
-```fish
-kpackagetool6 --type Plasma/Applet --remove app.morpheus.cookieclock
+```sh
 kpackagetool6 --type Plasma/Applet --remove app.morpheus.fortunecookie
 ```
+
+## Apply an update
+
+Plasma normally notices upgraded packages automatically. If the old interface remains visible, restart Plasma:
+
+```sh
+systemctl --user restart plasma-plasmashell.service
+```
+
+If your distribution does not provide that user service, log out and back in.
+
+## Troubleshooting
+
+### “Package is already installed”
+
+Use the corresponding `--upgrade` command instead of `--install`.
+
+### Fortune Cookie is empty
+
+Check whether the command is available:
+
+```sh
+command -v fortune
+```
+
+If that prints no path, install `fortune` using the instructions above.
+
+You can also test it directly:
+
+```sh
+fortune
+```
+
+### Check whether either widget is installed
+
+List installed Plasma applets:
+
+```sh
+kpackagetool6 --type Plasma/Applet --list
+```
+
+Look for these package IDs:
+
+- Cookie Clock: `app.morpheus.cookieclock`
+- Fortune Cookie: `app.morpheus.fortunecookie`
+
+### Configuration changes do not appear
+
+Press **Apply** in the settings window. If the widget still displays its previous state, restart Plasma using the command in **Apply an update**.
