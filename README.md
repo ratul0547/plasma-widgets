@@ -1,10 +1,13 @@
 # Cookie Clock and Fortune Cookie for Plasma 6
 
 This bundle contains two independent Plasma 6 widgets. 
+<img width="668" height="531" alt="image" src="https://github.com/user-attachments/assets/4dc7cdcc-a52c-48ca-95e0-01fb7a7023f1" />
 
-## Widgets
+
+## Screenshot
 [Download from releases page](https://github.com/ratul0547/plasma-widgets/releases)
 
+## Widgets
 ### Cookie Clock
 
 Cookie Clock is a material style clock widget that provides two selectable styles:
