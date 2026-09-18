@@ -1,11 +1,11 @@
 # Cookie Clock and Fortune Cookie for Plasma 6
 
 This bundle contains two independent Plasma 6 widgets. 
-<img width="668" height="531" alt="image" src="https://github.com/user-attachments/assets/4dc7cdcc-a52c-48ca-95e0-01fb7a7023f1" />
 
+[Download from releases page](https://github.com/ratul0547/plasma-widgets/releases)
 
 ## Screenshot
-[Download from releases page](https://github.com/ratul0547/plasma-widgets/releases)
+<img width="1366" height="730" alt="image" src="https://github.com/user-attachments/assets/31766330-8dd4-43d5-afdc-9e7b1ac814bf" />
 
 ## Widgets
 ### Cookie Clock
