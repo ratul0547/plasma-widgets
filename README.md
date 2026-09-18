@@ -3,6 +3,7 @@
 This bundle contains two independent Plasma 6 widgets. 
 
 ## Widgets
+[Download from releases page](https://github.com/ratul0547/plasma-widgets/releases)
 
 ### Cookie Clock
 
